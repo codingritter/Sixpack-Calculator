@@ -37,12 +37,17 @@ namespace sixpackCalculator {
         let fat: number = (bodyFatInput / 100) * weightInput;
         let leanBodyMass: number = weightInput - fat;
         let desiredWeight: number = leanBodyMass / ( 1 - desiredBodyFatPercentage);
+        let caloriesToLoose: number = (Math.round((weightInput - desiredWeight) * 100)) / 100 * 7700;
+        let weeklyCalorieLoss: number = caloricDeficit * 7;
         
         let resultText: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("result");
         resultText.textContent = "Goal Weight would be " + Math.round(desiredWeight * 100) / 100 +  " kg";
 
         let goalWeight: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("goalWeight");
         goalWeight.textContent = "You would need to loose " +  Math.round((weightInput - desiredWeight) * 100) / 100  + " kg";
+
+        let goalInWeeks: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("goalInWeeks");
+        goalInWeeks.textContent = "You would probably need about " +  Math.round(caloriesToLoose / weeklyCalorieLoss) + " weeks";
 
     }
 }

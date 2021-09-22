@@ -35,10 +35,14 @@ var sixpackCalculator;
         let fat = (bodyFatInput / 100) * weightInput;
         let leanBodyMass = weightInput - fat;
         let desiredWeight = leanBodyMass / (1 - desiredBodyFatPercentage);
+        let caloriesToLoose = (Math.round((weightInput - desiredWeight) * 100)) / 100 * 7700;
+        let weeklyCalorieLoss = caloricDeficit * 7;
         let resultText = document.getElementById("result");
         resultText.textContent = "Goal Weight would be " + Math.round(desiredWeight * 100) / 100 + " kg";
         let goalWeight = document.getElementById("goalWeight");
         goalWeight.textContent = "You would need to loose " + Math.round((weightInput - desiredWeight) * 100) / 100 + " kg";
+        let goalInWeeks = document.getElementById("goalInWeeks");
+        goalInWeeks.textContent = "You would probably need about " + Math.round(caloriesToLoose / weeklyCalorieLoss) + " weeks";
     }
 })(sixpackCalculator || (sixpackCalculator = {}));
 //# sourceMappingURL=script.js.map
