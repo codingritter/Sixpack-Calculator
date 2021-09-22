@@ -1,12 +1,11 @@
 "use strict";
 var sixpackCalculator;
 (function (sixpackCalculator) {
-    console.log("hey");
     window.addEventListener("load", handleLoad);
     let weightInput = 75;
     let bodyFatInput = 15;
-    let caloricDeficit = 500;
-    let desiredBodyFatPercentage = 0.10;
+    let desiredBodyFatPercentageInput = 0.10;
+    let caloricDeficitInput = 500;
     function handleLoad(_event) {
         let form = document.querySelector("form");
         form.addEventListener("input", handleInput);
@@ -23,24 +22,23 @@ var sixpackCalculator;
                 bodyFatInput = parseInt(target.value);
                 break;
             case "desiredBodyFatInput":
-                desiredBodyFatPercentage = parseInt(target.value) / 100;
+                desiredBodyFatPercentageInput = parseInt(target.value) / 100;
                 break;
-            case "caloricDeficit":
-                caloricDeficit = parseInt(target.value);
+            case "caloricDeficitInput":
+                caloricDeficitInput = parseInt(target.value);
                 break;
         }
     }
     function showResults() {
-        console.log(desiredBodyFatPercentage);
         let fat = (bodyFatInput / 100) * weightInput;
         let leanBodyMass = weightInput - fat;
-        let desiredWeight = leanBodyMass / (1 - desiredBodyFatPercentage);
-        let caloriesToLoose = (Math.round((weightInput - desiredWeight) * 100)) / 100 * 7700;
-        let weeklyCalorieLoss = caloricDeficit * 7;
+        let desiredWeight = leanBodyMass / (1 - desiredBodyFatPercentageInput);
+        let caloriesToLoose = (Math.round((weightInput - desiredWeight) * 100) / 100) * 7700;
+        let weeklyCalorieLoss = caloricDeficitInput * 7;
         let resultText = document.getElementById("result");
-        resultText.textContent = "Goal Weight would be " + Math.round(desiredWeight * 100) / 100 + " kg";
+        resultText.textContent = "Goal Weight would be " + Math.round(desiredWeight * 10) / 10 + " kg";
         let goalWeight = document.getElementById("goalWeight");
-        goalWeight.textContent = "You would need to loose " + Math.round((weightInput - desiredWeight) * 100) / 100 + " kg";
+        goalWeight.textContent = "You would need to loose " + Math.round((weightInput - desiredWeight) * 10) / 10 + " kg";
         let goalInWeeks = document.getElementById("goalInWeeks");
         goalInWeeks.textContent = "You would probably need about " + Math.round(caloriesToLoose / weeklyCalorieLoss) + " weeks";
     }
