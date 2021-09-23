@@ -39,7 +39,7 @@ namespace sixpackCalculator {
         let weeklyCalorieLoss: number = caloricDeficitInput * 7;
 
         let resultText: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("result");
-        resultText.textContent = "Goal Weight would be " + Math.round(desiredWeight * 10) / 10 + " kg";
+        resultText.textContent = "Goal weight would be " + Math.round(desiredWeight * 10) / 10 + " kg";
 
         let goalWeight: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("goalWeight");
         goalWeight.textContent = "You would need to loose " + Math.round((weightInput - desiredWeight) * 10) / 10 + " kg";

@@ -1,3 +1,6 @@
+html {
+    background-image: url('pictures/back.png');
+}
 .wrapper {
     text-align: center;
 }

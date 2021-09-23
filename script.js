@@ -36,7 +36,7 @@ var sixpackCalculator;
         let caloriesToLoose = (Math.round((weightInput - desiredWeight) * 100) / 100) * 7700;
         let weeklyCalorieLoss = caloricDeficitInput * 7;
         let resultText = document.getElementById("result");
-        resultText.textContent = "Goal Weight would be " + Math.round(desiredWeight * 10) / 10 + " kg";
+        resultText.textContent = "Goal weight would be " + Math.round(desiredWeight * 10) / 10 + " kg";
         let goalWeight = document.getElementById("goalWeight");
         goalWeight.textContent = "You would need to loose " + Math.round((weightInput - desiredWeight) * 10) / 10 + " kg";
         let goalInWeeks = document.getElementById("goalInWeeks");

@@ -7,26 +7,30 @@
     <title>Sixpack Calculator</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="pictures/favicon.png"/>
 </head>
 <body>
     <div class="wrapper">
     <h1 class="title">Sixpack Calculator</h1>
-    <p class="description">Calculates in how many Weeks you can see a visible Sixpack</p>
+    <p class="description">Calculates in how many weeks you can see a visible sixpack</p>
     <br><br>
     <form>
-        Your current Weight:
-        <input type="text" name="weightInput" placeholder="75"> kg <br><br><br>
-        Your Body Fat Percentage:
-        <input type="text" name="bodyFatInput" placeholder="15"> % <br><br><br>
-        Your desired Body Fat Percentage:
-        <input type="text" name="desiredBodyFatInput" placeholder="10"> % <br><br><br>
-        Your Caloric Deficit:
-        <input type="text" name="caloricDeficitInput" placeholder="500"> kcal <br><br><br>
+        Your current weight:
+        <input type="text" name="weightInput" placeholder="75" size="2"> kg <br><br><br>
+        Your current body fat percentage:
+        <input type="text" name="bodyFatInput" placeholder="15" size="2"> % <br><br><br>
+        Your desired body fat percentage:
+        <input type="text" name="desiredBodyFatInput" placeholder="10" size="2"> % <br><br><br>
+        Your caloric deficit:
+        <input type="text" name="caloricDeficitInput" placeholder="500" size="2"> kcal <br><br><br>
         <button type="button" name="submit" id="submit">Calculate</button>
-    </form>
+    </form><br>
     <h3 id="result"></h3>   
     <h3 id="goalWeight"></h3>
-    <h3 id="goalInWeeks"></h3>
+    <h3 id="goalInWeeks"></h3> <br><br>
+    <h3>At what body fat % are you currently at?</h3>
+    <p>Look at the images and reflect with your own body</p>
+    <img src="pictures/BodyFatChart.png" width="300px" height="200px">
 </div>
 </body>
 </html>
